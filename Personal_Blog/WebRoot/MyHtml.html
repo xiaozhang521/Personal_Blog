@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>index</title>
+	<meta charset="utf-8">
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./lib/css/font-awesome.min.css">
+    <script type="text/javascript" src="MenuAnimation.js"></script>
+  </head>
+  
+  <body onload="onClickMenu(0)" >
+  <div id="header">
+  		<div class="logo"> <p>this is menu</p> </div>
+  		<div id="menu">
+  			<nav>
+  				<ul>
+  					<li class="menu-item menu-item-home" onmouseover="mouseOverMenu(0)" onmouseout="mouseOutMenu(0)" onclick="onClickMenu(0)" >
+  					<a href="#">
+  					<i class="icon-home"></i>    主页</a></li>
+  					<li class="menu-item menu-item-note" onmouseover="mouseOverMenu(1)" onmouseout="mouseOutMenu(1)" onclick="onClickMenu(1)" >
+  					<a href="GetCatalog.fun" >
+  					<i class="icon-book"></i>    笔记</a></li>
+  					<li class="menu-item menu-item-solution" onmouseover="mouseOverMenu(2)" onmouseout="mouseOutMenu(2)" onclick="onClickMenu(2)" >
+  					<a href="#">
+  					<i class="icon-file"></i>    题解</a></li>
+  					<li class="menu-item menu-item-download" onmouseover="mouseOverMenu(3)" onmouseout="mouseOutMenu(3)" onclick="onClickMenu(3)" >
+  					<a href="#">
+  					<i class="icon-cloud-download"></i>    下载</a></li>
+  					<li class="menu-item menu-item-search" onmouseover="mouseOverMenu(4)" onmouseout="mouseOutMenu(4)" onclick="onClickMenu(4);clickSearchButton()" >
+  					<a href="#">
+  					<i class="icon-search"></i>    搜索 </a></li>
+  				</ul>
+  			</nav>
+  		</div>
+  	</div>
+  	<div class="searchBackground" style="display:none;" ></div>
+  	<div class="pop-up" style="display: none">
+  		<i class="icon-search"></i>
+  		<input ></input>
+  		<button  >search</button>
+  		<i class="icon-remove" style="float:right" onclick="closeSearchSpan()" ></i>
+  		<hr style="margin:10px 0px 0px 0px;height:2px;border:0px;background-color:#D5D5D5;color:#D5D5D5;"/>
+  	</div>
+  	<div id="page">
+  		<h2>正文</h2>
+  	</div>
+  	<div id="footer">
+  	</div>
+  </body>
+</html>

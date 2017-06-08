@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+#page
+{
+	background: #f5f5f5;
+}
+#articleSpan
+{
+	background: #ffffff;
+	margin-bottom: 10px;
+}
+#commentSpan
+{
+	background: #ffffff;
+	
+}

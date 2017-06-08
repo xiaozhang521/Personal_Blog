@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/nx/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.4">
+  <servlet>
+    <servlet-name>Generate Catalog</servlet-name>
+    <servlet-class>com.notes.servlet.GetNotesIndex</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Generate Catalog</servlet-name>
+    <url-pattern>/GetCatalog.fun</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>File Add</servlet-name>
+    <servlet-class>com.servlet.AddNewFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>File Add</servlet-name>
+    <url-pattern>/AddFile.fun</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>comment</servlet-name>
+    <servlet-class>com.servlet.DealComment</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>comment</servlet-name>
+    <url-pattern>/getComment.fun</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+#page 
+{
+	padding-left: 3%;
+	padding-top:20px;
+}
+#htmlDocument li
+{
+	opacity: 0.6;
+}
+.loadFile
+{
+	display:none;
+	position:absolute;
+	z-index: 3;
+	background: #ffffff;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-right: 20px;
+	padding-bottom: 15px;
+	border: 1px solid;
+	border-radius: 5px;
+}
