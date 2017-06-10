@@ -53,7 +53,7 @@ public class AddNewFile extends HttpServlet {
 		      else 
 		      { 
 		         fileOut.write(buf, 0, bytesIn); 
-		      } 
+		      }
 		} 
 		fileOut.flush(); 
 		fileOut.close();

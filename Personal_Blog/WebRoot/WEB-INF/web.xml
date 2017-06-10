@@ -17,11 +17,11 @@
     <url-pattern>/AddFile.fun</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>comment</servlet-name>
-    <servlet-class>com.servlet.DealComment</servlet-class>
+    <servlet-name>Document Comment</servlet-name>
+    <servlet-class>com.servlet.DealDocumentAndComment</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>comment</servlet-name>
-    <url-pattern>/getComment.fun</url-pattern>
+    <servlet-name>Document Comment</servlet-name>
+    <url-pattern>/DocumentAndComment.fun</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -6,7 +6,7 @@ a
 }
 body
 {
-	background:#f5f5f5;
+	background:url(./lib/img/background.jpg);
 }
 #show_message
 {
@@ -64,7 +64,7 @@ body
 #page
 {
 	background: #ffffff;
-	height: 800px;
+	height: 600px;
 	margin-right:15%;
 	margin-left: 320px;
 }

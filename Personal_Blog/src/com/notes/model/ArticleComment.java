@@ -1,9 +1,15 @@
 package com.notes.model;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
 public class ArticleComment {
 	private String commentType;
@@ -40,14 +46,16 @@ public class ArticleComment {
 				}catch(IOException e)
 				{
 					 e.printStackTrace();  
-			          System.out.println("create file fail "+e.getMessage());    
+			         System.out.println("create file fail "+e.getMessage());    
 				}
 			}
 			try
 			{
-				BufferedWriter writer=new BufferedWriter(new FileWriter(filePath));
-				writer.write(comment);
-				writer.write("$$");
+				//System.out.println(comment);
+				BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath,true),"utf-8"));
+				writer.append(comment);
+				writer.append("$$");
+				writer.newLine();
 				writer.close();
 			}catch(IOException e)
 			{
@@ -59,5 +67,42 @@ public class ArticleComment {
 		{
 			
 		}
+	}
+	public ArrayList<String> getAllComment(String filePath)
+	{
+		//编码问题未设置但是好使
+		ArrayList<String> comment = new ArrayList<String>(); 
+		if(commentType.equals("notes"))
+		{
+			filePath+="Notes/comments/"+commentArticle+".out";
+			File file=new File(filePath);
+			if(file.exists())
+			{
+				String line="";
+				try
+				{
+					BufferedReader reader=new BufferedReader(new FileReader(file));
+					String newLine="";
+					newLine=reader.readLine();
+					while(newLine!=null)
+					{
+						line+=newLine;
+						if(line.charAt(line.length()-1)=='$'&&line.charAt(line.length()-2)=='$');
+						{
+							comment.add(line.substring(0, line.length()-2));
+							//System.out.println(line);
+							line="";
+						}
+						newLine=reader.readLine();
+					}
+					reader.close();
+				}catch(IOException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return comment;
 	}
 }

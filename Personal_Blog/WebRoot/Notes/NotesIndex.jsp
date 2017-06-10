@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				if(htmlArticle!=null)
    				{
    					for(int i=0;i<htmlArticle.length;++i)
-   						out.println("<li><a onmouseover=\"mouseOnList("+i+")\" onmouseout=\"mouseLeaveList("+i+")\" href=\""+"./Notes/p/"+htmlArticle[i]+"\">"+htmlArticle[i]+"</a></li>");
+   						out.println("<li><a onmouseover=\"mouseOnList("+i+")\" onmouseout=\"mouseLeaveList("+i+")\" href=\""+"DocumentAndComment.fun?filename="+htmlArticle[i]+"&filetype=notes\">"+htmlArticle[i]+"</a></li>");
    				}
    			%>
    		   	<div class="searchBackground" style="display:none;" ></div>
