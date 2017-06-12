@@ -3,6 +3,7 @@ package com.notes.model;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -81,7 +82,9 @@ public class ArticleComment {
 				String line="";
 				try
 				{
-					BufferedReader reader=new BufferedReader(new FileReader(file));
+					//BufferedReader reader=new BufferedReader(new FileReader(file));
+					FileInputStream in = new FileInputStream(file);      
+			        BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));  
 					String newLine="";
 					newLine=reader.readLine();
 					while(newLine!=null)

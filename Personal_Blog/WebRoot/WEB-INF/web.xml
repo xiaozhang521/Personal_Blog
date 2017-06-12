@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/nx/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.4">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/nx/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
     <servlet-name>Generate Catalog</servlet-name>
     <servlet-class>com.notes.servlet.GetNotesIndex</servlet-class>
@@ -24,4 +24,15 @@
     <servlet-name>Document Comment</servlet-name>
     <url-pattern>/DocumentAndComment.fun</url-pattern>
   </servlet-mapping>
+  <jsp-config>
+<jsp-property-group>
+<description>html encoding</description>
+<display-name>JSPConfiguration</display-name>
+<url-pattern>*.html</url-pattern>
+<el-ignored>true</el-ignored>
+<page-encoding>UTF-8</page-encoding>
+
+</jsp-property-group>
+</jsp-config>
+
 </web-app>
