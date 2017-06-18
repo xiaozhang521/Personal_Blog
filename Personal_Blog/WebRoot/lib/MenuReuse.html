@@ -1,6 +1,11 @@
 	<script>
 		function SearchSource()
 		{
+			var showResultDiv=document.getElementById("showResult");
+			while(showResultDiv.hasChildNodes())
+			{
+				showResultDiv.removeChild(showResultDiv.firstChild);
+			}
 			var inputText=document.getElementById("searchInput").value;
 			var xmlhttp;
 			if (window.XMLHttpRequest)
@@ -12,9 +17,8 @@
   				xmlhttp.onreadystatechange = function() { 
  					if (xmlhttp.readyState==4&&xmlhttp.status==200) {  
  								var articleList=JSON.parse(xmlhttp.responseText);
- 								//articleList=xmlhttp.responseText;
- 								console.log(articleList.length);
- 								//console.log(articleList);
+ 								for(var i=0;i<articleList.length;++i)
+ 									showSearchResult(articleList[i]);
  						}
  					}
   			}
@@ -22,6 +26,17 @@
   			{// code for IE6, IE5
   				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   			}
+		}
+		function showSearchResult(name)
+		{
+			var newDiv=document.createElement("div");
+			newDiv.setAttribute("class", "searchResult");
+			var newLink=document.createElement("a");
+			newLink.innerHTML=name;
+			newLink.setAttribute("href", "DocumentAndComment.fun?filename="+name+"&filetype=notes");
+			newDiv.appendChild(newLink);
+			var showDiv=document.getElementById("showResult");
+			showDiv.appendChild(newDiv);
 		}
 	</script>
 	<div id="header">
@@ -55,4 +70,5 @@
   		<button onclick="SearchSource()" >search</button>
   		<i class="icon-remove" style="float:right" onclick="closeSearchSpan()" ></i>
   		<hr style="margin:10px 0px 0px 0px;height:2px;border:0px;background-color:#D5D5D5;color:#D5D5D5;"/>
+  		<div id="showResult"></div>
   	</div>
