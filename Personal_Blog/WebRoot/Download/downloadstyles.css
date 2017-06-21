@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+#checkID
+{
+	position:absolute;
+	z-index:3;
+	background:#ffffff;
+	border: 1px solid;
+	border-radius: 5px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-right: 20px;
+	padding-bottom: 15px;
+	text-align: center;
+}

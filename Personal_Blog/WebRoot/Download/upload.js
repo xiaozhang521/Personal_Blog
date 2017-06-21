@@ -1,34 +1,6 @@
 /**
  * 
  */
-
-function mouseOnList(n)
-{
-	var div=document.getElementById('htmlDocument');
-	var list=div.getElementsByTagName("li")[n];
-	list.style.opacity="1";
-}
-function mouseLeaveList(n)
-{
-	var div=document.getElementById('htmlDocument');
-	var list=div.getElementsByTagName("li")[n];
-	list.style.opacity="0.6";
-}
-function showLoadFile()
-{
-	document.getElementsByClassName("loadFile")[0].style.display="block";
-	var div=document.getElementsByClassName("searchBackground")[0];
-	var height=document.body.clientHeight;
-	var width=document.body.clientWidth;
-	div.style.height=height+"px";
-	div.style.width=width+"px";
-	div.style.display="block";
-}
-function cancelLoadFile()
-{
-	document.getElementsByClassName("loadFile")[0].style.display="none";
-	document.getElementsByClassName("searchBackground")[0].style.display="none";
-}
 function uploadAndSubmit()
 {
 	var form=document.forms["upLoadFile"];
@@ -61,7 +33,7 @@ function uploadAndSubmit()
  				{
  					document.getElementsByClassName("icon-spin")[0].style.visibility="hidden";
  					var xhr=new XMLHttpRequest();
- 					xhr.open("post","AddFile.fun?filename="+file.name);
+ 					xhr.open("post","Download/DownloadSource.fun?filename="+file.name);
  					xhr.overrideMimeType("application/octet-stream");
  					xhr.send(reader.result);
  					xhr.onreadystatechange = function() { 
@@ -80,4 +52,35 @@ function uploadAndSubmit()
  		}
 	}
 	else alert("please choose the file");
+}
+function checkPassword()
+{
+	if(document.getElementsByName("password")[0].value='lalala')
+	{
+		uploadAndSubmit()
+	}
+	else
+	{
+		alert('密码错误');
+	}
+	var div=document.getElementById("checkID");
+	div.style.display="none";
+}
+function enterPassword()
+{
+	var div=document.getElementById("checkID");
+	div.style.display="block";
+	var background=document.getElementsByClassName("searchBackground")[0];
+	var height=document.body.clientHeight;
+	var width=document.body.clientWidth;
+	background.style.height=height+"px";
+	background.style.width=width+"px";
+	background.style.display="block";
+}
+function cancelCheck()
+{
+	var div=document.getElementById("checkID");
+	div.style.display="none";
+	var background=document.getElementsByClassName("searchBackground")[0];
+	background.style.display="none";
 }

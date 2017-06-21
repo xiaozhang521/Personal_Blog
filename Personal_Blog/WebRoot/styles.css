@@ -27,6 +27,9 @@ body
 .logo p
 {
 	color:#ffffff;
+	text-align:center;
+	padding-top: 30px; 
+	padding-bottom: 30px;
 }
 #header 
 {
@@ -44,6 +47,12 @@ body
 #menu li {
 	font-size: 1.5em;
 	margin-top:5px;
+}
+#contactMe{
+	margin-top:8px;
+	background: #ffffff;
+	text-align:center;
+	font-size:1.5em;
 }
 .pop-up
 {

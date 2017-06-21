@@ -19,6 +19,10 @@
  								var articleList=JSON.parse(xmlhttp.responseText);
  								for(var i=0;i<articleList.length;++i)
  									showSearchResult(articleList[i]);
+ 								if(articleList.length===0)
+ 								{
+ 									document.getElementById("showResult").innerHTML="No Such File!";
+ 								}
  						}
  					}
   			}
@@ -40,7 +44,7 @@
 		}
 	</script>
 	<div id="header">
-  		<div class="logo"> <p>this is menu</p> </div>
+  		<div class="logo"> <p>ZYH's Blog</p> </div>
   		<div id="menu">
   			<nav>
   				<ul>
@@ -54,13 +58,18 @@
   					<a href="#">
   					<i class="icon-file"></i>    题解</a></li>
   					<li class="menu-item menu-item-download" onmouseover="mouseOverMenu(3)" onmouseout="mouseOutMenu(3)" onclick="onClickMenu(3)" >
-  					<a href="#">
+  					<a href="Download/DownloadSource.fun">
   					<i class="icon-cloud-download"></i>    下载</a></li>
   					<li class="menu-item menu-item-search" onmouseover="mouseOverMenu(4)" onmouseout="mouseOutMenu(4)" onclick="onClickMenu(4);clickSearchButton()" >
   					<a href="javascript:clickSearchButton()">
   					<i class="icon-search"></i>    搜索 </a></li>
   				</ul>
   			</nav>
+  		</div>
+  		<div id="contactMe">
+  			<h3>Contact Me</h3>
+  			<li class="icon-github-alt"></li>
+  			<a href="https://github.com/xiaozhang521">github</a>
   		</div>
   	</div>
   	<div class="searchBackground" style="display:none;" ></div>

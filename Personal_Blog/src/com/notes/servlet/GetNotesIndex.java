@@ -31,7 +31,7 @@ public class GetNotesIndex extends HttpServlet {
 		// TODO Auto-generated method stub
 		String path=getServletContext().getRealPath("/");
 		SearchAllFile searchFile=new SearchAllFile();
-		String[] htmlArticle=searchFile.searchFlie(path);
+		String[] htmlArticle=searchFile.searchNotesFlie(path);
 		request.setAttribute("html", htmlArticle);
 		RequestDispatcher view=request.getRequestDispatcher("./Notes/NotesIndex.jsp");
 		view.forward(request, response);

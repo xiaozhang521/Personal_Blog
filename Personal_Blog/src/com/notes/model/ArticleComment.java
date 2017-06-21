@@ -90,10 +90,12 @@ public class ArticleComment {
 					while(newLine!=null)
 					{
 						line+=newLine;
-						if(line.charAt(line.length()-1)=='$'&&line.charAt(line.length()-2)=='$');
+						if(line.length()<2) {newLine=reader.readLine();continue;}
+						if(line.charAt(line.length()-1)=='$'&&line.charAt(line.length()-2)=='$')
 						{
-							comment.add(line.substring(0, line.length()-2));
 							//System.out.println(line);
+							//System.out.println(line.substring(0, line.length()-2));
+							comment.add(line.substring(0, line.length()-2));
 							line="";
 						}
 						newLine=reader.readLine();
